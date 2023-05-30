@@ -32,5 +32,6 @@ $entity->firstName("Clark");
 $entity->lastName("Kent");
 echo $entity->sayHello();
 
+// Use different setter
 $entity->setLastName("Brzęczyszczykiewicz");
 echo $entity->sayHello();
