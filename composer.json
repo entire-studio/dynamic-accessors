@@ -1,0 +1,19 @@
+{
+    "name": "gormack/dynamic-accessors",
+    "description": "Dynamic setters and getters. While it can be done, it doesn't mean you should do it.",
+    "type": "library",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gormack\\DynamicAccessors\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tomasz Jóźwik",
+            "email": "dev@entire.studio"
+        }
+    ]
+}
