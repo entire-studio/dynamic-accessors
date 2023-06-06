@@ -6,12 +6,14 @@ namespace Gormack\DynamicAccessors;
 
 use ReflectionClass;
 
-trait DynamicAccessors {
+trait DynamicAccessors
+{
     private bool $areAccessorsInitiated = false;
     /** @var Accessor[] */
     protected array $accessors = [];
 
-    private function initAccessors(): void {
+    private function initAccessors(): void
+    {
         $self = new ReflectionClass($this);
         $properties = $self->getProperties();
         foreach ($properties as $property) {
@@ -29,7 +31,8 @@ trait DynamicAccessors {
         }
     }
 
-    public function __call(string $name, array $arguments) {
+    public function __call(string $name, array $arguments)
+    {
         if (!$this->areAccessorsInitiated) {
             $this->initAccessors();
         }
@@ -40,14 +43,14 @@ trait DynamicAccessors {
         if ($accessor instanceof Accessor) {
             if ($accessor->getType() === Get::class) {
                 return $this->{$accessor->getPropertyName()};
-            }
-            else {
+            } else {
                 $this->{$accessor->getPropertyName()} = $arguments[0];
             }
         }
     }
 
-    private function setAccessor(string $accessorType, string $accessorName, string $propertyName): void {
+    private function setAccessor(string $accessorType, string $accessorName, string $propertyName): void
+    {
         $accessorName = !empty($accessorName) ? $accessorName : $propertyName;
         $key = "$accessorType|$accessorName";
         $this->accessors[$key] = new Accessor(

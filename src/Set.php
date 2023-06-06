@@ -7,10 +7,14 @@ namespace Gormack\DynamicAccessors;
 use Attribute;
 
 #[Attribute(flags: Attribute::TARGET_PROPERTY | Attribute::IS_REPEATABLE)]
-class Set {
-    public function __construct(private readonly string $name = '') { }
+class Set
+{
+    public function __construct(private readonly string $name = '')
+    {
+    }
 
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->name;
     }
 }
