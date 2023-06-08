@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-use Gormack\DynamicAccessors\DynamicAccessors;
-use Gormack\DynamicAccessors\Get;
-use Gormack\DynamicAccessors\Set;
+use Gormack\DynamicAccessors\{
+    DynamicAccessors,
+    Get,
+    Set
+};
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -12,26 +14,19 @@ class Example
 {
     use DynamicAccessors;
 
-    #[Set, Get]
+    #[Set, Get] // Register default accessors
     private string $firstName;
 
-    #[Set('lastName'), Set('setLastName'), Get('getLastName')]
+    #[Set('setLastName'), Get('getLastName')] // Register under different name
     private string $lastName;
-
-    public function sayHello(): string {
-        return sprintf(
-            "Hello, I'm %s %s." . PHP_EOL,
-            $this->firstName,
-            $this->lastName,
-        );
-    }
 }
 
-$entity = new Example();
-$entity->firstName("Clark");
-$entity->lastName("Kent");
-echo $entity->sayHello();
+$e = new Example();
+$e->firstName('Clark');
+$e->setLastName('Kent');
 
-// Use different setter
-$entity->setLastName("Brzęczyszczykiewicz");
-echo $entity->sayHello();
+printf(
+    'My name is %s %s.' . PHP_EOL,
+    $e->firstName(),  // getter and setter have the same name
+    $e->getLastName() // getter is custom and different from setter
+);
