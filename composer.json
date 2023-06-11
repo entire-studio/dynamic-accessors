@@ -2,9 +2,7 @@
     "name": "gormack/dynamic-accessors",
     "description": "Dynamic setters and getters. While it can be done, it doesn't mean you should do it.",
     "type": "library",
-    "license": [
-        "Unlicense"
-    ],
+    "license": "Unlicense",
     "authors": [
         {
             "name": "Tomasz Jóźwik",

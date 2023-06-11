@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.2/phpunit.xsd"
-        bootstrap="tests/bootstrap.php"
-        colors="true"
-        cacheResult="false"
-        failOnEmptyTestSuite="true"
-        failOnWarning="true"
-        failOnRisky="true"
-        failOnDeprecation="true"
-        failOnNotice="true"
-        stopOnFailure="true"
-        beStrictAboutChangesToGlobalState="true"
-        beStrictAboutOutputDuringTests="true"
-        beStrictAboutTestsThatDoNotTestAnything="true"
-        beStrictAboutCoverageMetadata="true"
-        enforceTimeLimit="true"
-        defaultTimeLimit="10"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.2/phpunit.xsd"
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    cacheResult="false"
+    failOnEmptyTestSuite="true"
+    failOnWarning="true"
+    failOnRisky="true"
+    failOnDeprecation="true"
+    failOnNotice="true"
+    stopOnFailure="true"
+    beStrictAboutChangesToGlobalState="true"
+    beStrictAboutOutputDuringTests="true"
+    beStrictAboutTestsThatDoNotTestAnything="true"
+    beStrictAboutCoverageMetadata="true"
+    enforceTimeLimit="true"
+    defaultTimeLimit="10"
 >
-  <testsuites>
-    <testsuite name="unit-tests">
-      <directory>tests/unit</directory>
-    </testsuite>
-  </testsuites>
-  <coverage/>
-  <source>
-    <include>
-      <directory suffix=".php">src</directory>
-    </include>
-  </source>
+    <testsuites>
+        <testsuite name="unit-tests">
+            <directory>tests/unit</directory>
+        </testsuite>
+    </testsuites>
+    <coverage/>
+    <source>
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </source>
 </phpunit>
