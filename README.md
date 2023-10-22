@@ -23,6 +23,11 @@ use Gormack\DynamicAccessors\{
     Set
 };
 
+/**
+ * You can annotate your class for IDE completion
+ * @method void setLastName(string $name)
+ * @method string getLastName()
+ */
 class Example {
     use DynamicAccessors;
 

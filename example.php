@@ -10,6 +10,11 @@ use Gormack\DynamicAccessors\{
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+/**
+ * You can annotate your class for IDE completion
+ * @method void setLastName(string $name)
+ * @method string getLastName()
+ */
 class Example
 {
     use DynamicAccessors;
