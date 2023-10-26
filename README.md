@@ -1,23 +1,23 @@
 # Dynamic Accessors
 
-![Packagist Version (including pre-releases)](https://img.shields.io/packagist/v/gormack/dynamic-accessors?include_prereleases)
-![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/gormack/dynamic-accessors?include_prereleases&sort=semver)
-[![CI](https://github.com/gormack/dynamic-accessors/actions/workflows/ci.yml/badge.svg)](https://github.com/gormack/dynamic-accessors/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/github/gormack/dynamic-accessors/branch/master/graph/badge.svg?token=BLCJ4WV25D)](https://codecov.io/github/gormack/dynamic-accessors)
+![Packagist Version (including pre-releases)](https://img.shields.io/packagist/v/entire-studio/dynamic-accessors?include_prereleases)
+![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/entire-studio/dynamic-accessors?include_prereleases&sort=semver)
+[![CI](https://github.com/entire-studio/dynamic-accessors/actions/workflows/ci.yml/badge.svg)](https://github.com/entire-studio/dynamic-accessors/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/github/entire-studio/dynamic-accessors/branch/master/graph/badge.svg?token=BLCJ4WV25D)](https://codecov.io/github/entire-studio/dynamic-accessors)
 
 Dynamic setters and getters. While it can be done, it doesn't mean you should do it.
 
 ## Installation
 Install the latest version with
 ```bash
-$ composer require gormack/dynamic-accessors
+$ composer require entire-studio/dynamic-accessors
 ```
 
 ## Basic Usage
 ```php
 <?php
 
-use Gormack\DynamicAccessors\{
+use EntireStudio\DynamicAccessors\{
     DynamicAccessors,
     Get,
     Set

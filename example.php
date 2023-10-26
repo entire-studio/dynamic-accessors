@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Gormack\DynamicAccessors\{
+use EntireStudio\DynamicAccessors\{
     DynamicAccessors,
     Get,
     Set

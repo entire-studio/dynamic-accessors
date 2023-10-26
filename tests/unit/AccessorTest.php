@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Gormack\DynamicAccessors;
+namespace Tests\Unit\EntireStudio\DynamicAccessors;
 
-use Gormack\DynamicAccessors\Accessor;
+use EntireStudio\DynamicAccessors\Accessor;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
