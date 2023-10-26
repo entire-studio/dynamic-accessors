@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Gormack\DynamicAccessors;
+namespace Tests\Unit\EntireStudio\DynamicAccessors;
 
-use Gormack\DynamicAccessors\{DynamicAccessors, Get, Set};
+use EntireStudio\DynamicAccessors\{DynamicAccessors, Get, Set};
 use PHPUnit\Framework\TestCase;
 
 class DynamicAccessorTest extends TestCase
