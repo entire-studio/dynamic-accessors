@@ -2,7 +2,7 @@
     "name": "entire-studio/dynamic-accessors",
     "description": "Dynamic setters and getters. While it can be done, it doesn't mean you should do it.",
     "type": "library",
-    "license": "Unlicense",
+    "license": "MIT",
     "authors": [
         {
             "name": "Tomasz Jóźwik",
