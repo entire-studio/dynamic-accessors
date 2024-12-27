@@ -46,6 +46,11 @@ jobs:
       - name: Check coding standard
         run: ./vendor/bin/phpcs --standard=phpcs.xml
 
+      - name: Run static analysis
+        uses: php-actions/phpstan@v3.0.3
+        with:
+          configuration: ./phpstan.neon
+
       - name: Run test suites
         run: |
           mkdir ../code-coverage-php-html-${{ matrix.php-versions }}

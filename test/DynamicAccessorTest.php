@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\EntireStudio\DynamicAccessors;
+namespace EntireStudio\DynamicAccessors\Test;
 
 use EntireStudio\DynamicAccessors\{DynamicAccessors, Get, Set};
 use PHPUnit\Framework\TestCase;
