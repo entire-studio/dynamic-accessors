@@ -53,6 +53,8 @@ $ php example.php
 ```
 ## Commands
 
-- `composer lint` - run linter.
-- `composer lint:fix` - fix some issues detected by linter automatically (easy ones).
-- `composer test` - run tests.
+### Development
+- `composer test` - runs test suite.
+- `composer sat` - runs static analysis.
+- `composer style` - checks codebase against PSR-12 coding style.
+- `composer style:fix` - fixes basic coding style issues.

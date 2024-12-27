@@ -13,5 +13,5 @@
   </rule>
   <config name="testVersion" value="8.3"/>
   <file>src/</file>
-  <file>tests/</file>
+  <file>test/</file>
 </ruleset>

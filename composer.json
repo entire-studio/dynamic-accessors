@@ -10,28 +10,34 @@
         }
     ],
     "scripts": {
-        "lint": "./vendor/bin/phpcs --standard=phpcs.xml",
-        "lint:fix": "./vendor/bin/phpcbf --standard=phpcs.xml",
-        "test": "./vendor/bin/phpunit --testdox -c phpunit.xml"
-    },
-    "require": {
-        "php": ">=8.1"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^10.5.7",
-        "squizlabs/php_codesniffer": "^3.8.1",
-        "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
-        "phpcompatibility/php-compatibility": "^9.3.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "EntireStudio\\DynamicAccessors\\": "src/",
-            "Tests\\Unit\\EntireStudio\\DynamicAccessors\\": "tests/unit"
-        }
+        "test": "vendor/bin/phpunit --testdox -c phpunit.xml",
+        "sat": "vendor/bin/phpstan analyze -c phpstan.neon",
+        "style": "vendor/bin/phpcs --standard=phpcs.xml",
+        "style:fix": "vendor/bin/phpcbf --standard=phpcs.xml"
     },
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "EntireStudio\\DynamicAccessors\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11",
+        "squizlabs/php_codesniffer": "^3",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1",
+        "phpcompatibility/php-compatibility": "^9",
+        "phpstan/phpstan": "^1"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EntireStudio\\DynamicAccessors\\Test\\": "test/"
         }
     }
 }
