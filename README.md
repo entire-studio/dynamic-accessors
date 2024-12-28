@@ -13,9 +13,13 @@ Install the latest version with
 $ composer require entire-studio/dynamic-accessors
 ```
 
-## Basic Usage
+## Examples
+
+### Basic - accessors on class properties
 ```php
 <?php
+
+declare(strict_types=1);
 
 use EntireStudio\DynamicAccessors\{
     DynamicAccessors,
@@ -25,32 +29,82 @@ use EntireStudio\DynamicAccessors\{
 
 /**
  * You can annotate your class for IDE completion
+ *
+ * @method string|void firstName(?string $argument = '')
  * @method void setLastName(string $name)
  * @method string getLastName()
  */
-class Example {
+class Basic
+{
     use DynamicAccessors;
 
-    #[Set, Get] // Register default accessors
+    #[Set, Get]
     private string $firstName;
 
-    #[Set('setLastName'), Get('getLastName')] // Register under different name
+    #[Set('setLastName'), Get('getLastName')]
     private string $lastName;
 }
 
-$e = new Example();
-$e->firstName('Clark');
-$e->setLastName('Kent');
+$basic = new Basic();
+$basic->firstName('Clark');
+$basic->setLastName('Kent');
 
 printf(
     'My name is %s %s.' . PHP_EOL,
-    $e->firstName(),  // getter and setter have the same name
-    $e->getLastName() // getter is custom and different from setter
+    $basic->firstName(),
+    $basic->getLastName(),
 );
 ```
 ```bash
-$ php example.php
+$ php example/Basic.php
 ```
+### Constructor - accessors on constructor parameters
+```php
+<?php
+
+declare(strict_types=1);
+
+use EntireStudio\DynamicAccessors\{
+    DynamicAccessors,
+    Get,
+    Set
+};
+
+/**
+ * You can annotate your class for IDE completion
+ *
+ * @method string|void firstName(?string $argument = '')
+ * @method void setLastName(string $name)
+ * @method string getLastName()
+ */
+class ConstructorPropertyPromotion
+{
+    use DynamicAccessors;
+
+    public function __construct(
+        #[Set, Get]
+        private string $firstName,
+        #[Set('setLastName'), Get('getLastName')]
+        private string $lastName,
+    ) {
+    }
+}
+
+$cpp = new ConstructorPropertyPromotion(
+    'Lois',
+    'Lane'
+);
+
+printf(
+    'My name is %s %s.' . PHP_EOL,
+    $cpp->firstName(),
+    $cpp->getLastName(),
+);
+```
+```bash
+$ php example/ConstructorPropertyPromotion.php
+```
+
 ## Commands
 
 ### Development
