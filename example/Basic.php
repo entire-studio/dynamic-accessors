@@ -2,36 +2,40 @@
 
 declare(strict_types=1);
 
+namespace EntireStudio\DynamicAccessors\Example;
+
 use EntireStudio\DynamicAccessors\{
     DynamicAccessors,
     Get,
     Set
 };
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 /**
  * You can annotate your class for IDE completion
+ *
+ * @method string|void firstName(?string $argument = '')
  * @method void setLastName(string $name)
  * @method string getLastName()
  */
-class Example
+class Basic
 {
     use DynamicAccessors;
 
-    #[Set, Get] // Register default accessors
+    #[Set, Get]
     private string $firstName;
 
-    #[Set('setLastName'), Get('getLastName')] // Register under different name
+    #[Set('setLastName'), Get('getLastName')]
     private string $lastName;
 }
 
-$e = new Example();
-$e->firstName('Clark');
-$e->setLastName('Kent');
+$basic = new Basic();
+$basic->firstName('Clark');
+$basic->setLastName('Kent');
 
 printf(
     'My name is %s %s.' . PHP_EOL,
-    $e->firstName(),  // getter and setter have the same name
-    $e->getLastName() // getter is custom and different from setter
+    $basic->firstName(),
+    $basic->getLastName(),
 );
