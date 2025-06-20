@@ -31,7 +31,12 @@ trait DynamicAccessors
         }
     }
 
-    public function __call(string $name, array $arguments)
+    /**
+     * @param string $name
+     * @param mixed[] $arguments
+     * @return mixed
+     */
+    public function __call(string $name, array $arguments): mixed
     {
         if (!$this->areAccessorsInitiated) {
             $this->initAccessors();
@@ -47,6 +52,8 @@ trait DynamicAccessors
                 $this->{$accessor->getPropertyName()} = $arguments[0];
             }
         }
+
+        return null;
     }
 
     private function setAccessor(string $accessorType, string $accessorName, string $propertyName): void
